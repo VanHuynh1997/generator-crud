@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "yeoman-generator": "^5.2.0"
+  },
+  "name": "generator-crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
