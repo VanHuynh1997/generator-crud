@@ -68,14 +68,14 @@ module.exports = class extends Generator {
       );
       this.fs.copyTpl(
           this.templatePath('component.js'),
-          this.destinationPath(`src/views/app-views/${directory}/${name}/${formName + "Form1"}/index.js`),
+          this.destinationPath(`src/views/app-views/${directory}/${name}/${formName + "Form"}/index.js`),
           {
             name,
           },
       );
         this.fs.copyTpl(
             this.templatePath('component.js'),
-            this.destinationPath(`src/views/app-views/${directory}/${name}/${formName + "Form1"}/GeneralField.js`),
+            this.destinationPath(`src/views/app-views/${directory}/${name}/${formName + "Form"}/GeneralField.js`),
             {
                 name,
             },
