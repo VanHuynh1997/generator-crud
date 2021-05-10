@@ -5,5 +5,7 @@
   "name": "generator-crud",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/VanHuynh1997/Crud-econtract.git",
+  "author": "OOAD17102 <huynhquangvan.200897@gmail.com>"
 }
