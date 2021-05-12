@@ -1,0 +1,21 @@
+{
+    "<%= nameUpper %>.general": "Thông tin chung",
+    "<%= nameUpper %>.basicInfo": "Thông tin cơ bản",
+    "<%= nameUpper %>.add": "Thêm nhóm đối tác",
+    "<%= nameUpper %>.update": "Cập nhật nhóm đối tác",
+    "<%= nameUpper %>.description": "Mô tả",
+    "<%= nameUpper %>.name": "Tên nhóm đối tác",
+    "<%= nameUpper %>.view": "Chi tiết nhóm đối tác",
+    "<%= nameUpper %>.code": "Mã",
+    "<%= nameUpper %>.action": "Hành động",
+    "<%= nameUpper %>.creator": "Người tạo",
+    "<%= nameUpper %>.markerDate": "Ngày tạo",
+    "<%= nameUpper %>.status": "Trạng thái",
+    "<%= nameUpper %>.active": "Kích hoạt",
+    "<%= nameUpper %>.active.confirmMessage": "Bạn có chắc muốn kích hoạt nhóm đối tác này?",
+    "<%= nameUpper %>.deactive": "Vô hiệu hóa",
+    "<%= nameUpper %>.deactive.confirmMessage": "Bạn có chắc muốn vô hiệu hóa nhóm đối tác này?",
+    "<%= nameUpper %>.isExist": "Mã đã tồn tại",
+    "<%= nameUpper %>.requiredCode": "Vui lòng nhập mã nhóm đối tác",
+    "<%= nameUpper %>.requiredName": "Vui lòng nhập tên nhóm đối tác"
+}

@@ -29,83 +29,123 @@ module.exports = class extends Generator {
   writing() {
     this.log('Writing files... 📝');
     const { directory, name } = this.answers;
-    const capitalizedStr = name.charAt(0).toUpperCase() + name.slice(1);
-    const  formName = capitalizedStr.replace(/-/g, '')
+    const action = name.toUpperCase().replace(/-/g, '_')
+
+      const splitStr = name.toLowerCase().split('-');
+      for (let i = 0; i < splitStr.length; i++) {
+          splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+      }
+      const nameUpper = splitStr.join('');
+      // this.fs.copyTpl(
+      //     this.templatePath('ParentIndex.js'),
+      //     this.destinationPath(`src/views/app-views/${directory}/index.js`),
+      //     {
+      //         name,action,nameUpper,directory
+      //     },
+      // );
       this.fs.copyTpl(
-        this.templatePath('component.js'),
+          this.templatePath('RouteIndex.js'),
+          this.destinationPath(`src/views/app-views/${directory}/${name}/index.js`),
+          {
+              name,action,nameUpper,directory
+          },
+      );
+      this.fs.copyTpl(
+        this.templatePath('add.js'),
         this.destinationPath(`src/views/app-views/${directory}/${name}/add/index.js`),
         {
-          name,
+          name,action,nameUpper,directory
         },
       );
       this.fs.copyTpl(
-          this.templatePath('component.js'),
-          this.destinationPath(`src/views/app-views/${directory}/${name}/index.js`),
-          {
-              name,
-          },
-      );
-      this.fs.copyTpl(
-          this.templatePath('component.js'),
+          this.templatePath('edit.js'),
           this.destinationPath(`src/views/app-views/${directory}/${name}/edit/index.js`),
           {
-            name,
+            name,action,nameUpper,directory
           },
       );
       this.fs.copyTpl(
-          this.templatePath('component.js'),
+          this.templatePath('list.js'),
           this.destinationPath(`src/views/app-views/${directory}/${name}/list/index.js`),
           {
-            name,
+            name,action,nameUpper,directory
           },
       );
       this.fs.copyTpl(
-          this.templatePath('component.js'),
+          this.templatePath('view.js'),
           this.destinationPath(`src/views/app-views/${directory}/${name}/view/index.js`),
           {
-            name,
+            name,action,nameUpper,directory
           },
       );
       this.fs.copyTpl(
-          this.templatePath('component.js'),
-          this.destinationPath(`src/views/app-views/${directory}/${name}/${formName + "Form"}/index.js`),
+          this.templatePath('DetailsView.js'),
+          this.destinationPath(`src/views/app-views/${directory}/${name}/view/DetailsView.js`),
           {
-            name,
+              name,action,nameUpper,directory
+          },
+      );
+      this.fs.copyTpl(
+          this.templatePath('FormIndex.js'),
+          this.destinationPath(`src/views/app-views/${directory}/${name}/${nameUpper + "Form"}/index.js`),
+          {
+            name,action,nameUpper,directory
           },
       );
         this.fs.copyTpl(
-            this.templatePath('component.js'),
-            this.destinationPath(`src/views/app-views/${directory}/${name}/${formName + "Form"}/GeneralField.js`),
+            this.templatePath('GeneralField.js'),
+            this.destinationPath(`src/views/app-views/${directory}/${name}/${nameUpper + "Form"}/GeneralField.js`),
             {
-                name,
+                name,action,nameUpper,directory
             },
         );
       this.fs.copyTpl(
-        this.templatePath('module.js'),
-        this.destinationPath(`src/redux/actions/${capitalizedStr}.js`),
+          this.templatePath('english.js'),
+          this.destinationPath(`src/lang/locales/en/${nameUpper}.json`),
+          {
+              name,action,nameUpper,directory
+          },
+      );
+      this.fs.copyTpl(
+          this.templatePath('vietnamese.js'),
+          this.destinationPath(`src/lang/locales/vi/${nameUpper}.json`),
+          {
+              name,action,nameUpper,directory
+          },
+      );
+      this.fs.copyTpl(
+          this.templatePath('services.js'),
+          this.destinationPath(`src/services/${nameUpper + "Services"}.js`),
+          {
+              name,action,nameUpper,directory
+          },
+      );
+      this.fs.copyTpl(
+        this.templatePath('actions.js'),
+        this.destinationPath(`src/redux/actions/${nameUpper}.js`),
         {
-          name,
+          name,action,nameUpper,directory
         },
       );
       this.fs.copyTpl(
-          this.templatePath('component.js'),
-          this.destinationPath(`src/redux/constants/${capitalizedStr}.js`),
+          this.templatePath('constants.js'),
+          this.destinationPath(`src/redux/constants/${nameUpper}.js`),
           {
-            name,
+            name,action,nameUpper,directory
           },
       );
       this.fs.copyTpl(
-          this.templatePath('module.js'),
-          this.destinationPath(`src/redux/sagas/${capitalizedStr}.js`),
+          this.templatePath('sagas.js'),
+          this.destinationPath(`src/redux/sagas/${nameUpper}.js`),
           {
-            name,
+            name,action,nameUpper,directory
           },
       );
       this.fs.copyTpl(
-          this.templatePath('component.js'),
-          this.destinationPath(`src/redux/reducers/${capitalizedStr}.js`),
+          this.templatePath('reducers.js'),
+          this.destinationPath(`src/redux/reducers/${nameUpper}.js`),
           {
-            name,
+            name,action,nameUpper,directory
           },
       );
     };
