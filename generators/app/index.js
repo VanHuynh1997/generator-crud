@@ -14,13 +14,23 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'directory',
             message: 'Input the directory',
-            validate: input => Boolean(input.length),
+            validate: function(directory){
+                if(directory.length == 0)
+                    return "Your directory is required !";
+
+                return !directory.length == 0
+            }
         },
       {
         type: 'input',
         name: 'name',
         message: 'Input the name',
-        validate: input => Boolean(input.length),
+          validate: function(name){
+              if(name.length == 0)
+                  return "Your name is required !";
+
+              return !name.length == 0
+          }
       },
     ]);
   }

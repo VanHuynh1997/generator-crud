@@ -2,16 +2,16 @@ import React from "react";
 import { Input, Row, Col, Card, Form } from "antd";
 import IntlMessage from "components/util-components/IntlMessage";
 const rules = {
-    partnerGroupCode: [
+    <%= nameUpper %>Code: [
         {
             required: true,
-            message: <IntlMessage id="partnerGroup.requiredCode" />,
+            message: <IntlMessage id="<%= nameUpper %>.requiredCode" />,
         },
     ],
-    partnerGroupName: [
+    <%= nameUpper %>Name: [
         {
             required: true,
-            message: <IntlMessage id="partnerGroup.requiredName" />,
+            message: <IntlMessage id="<%= nameUpper %>.requiredName" />,
         },
     ],
 };
@@ -24,7 +24,7 @@ const GeneralField = (props) => (
                         <Form.Item
                             name="code"
                             label={<IntlMessage id="<%= nameUpper %>.code" />}
-                            rules={rules.partnerGroupCode}
+                            rules={rules.<%= nameUpper %>Code}
                         >
                             <Input />
                         </Form.Item>
@@ -33,7 +33,7 @@ const GeneralField = (props) => (
                         <Form.Item
                             name="name"
                             label={<IntlMessage id="<%= nameUpper %>.name" />}
-                            rules={rules.partnerGroupName}
+                            rules={rules.<%= nameUpper %>Name}
                         >
                             <Input />
                         </Form.Item>
